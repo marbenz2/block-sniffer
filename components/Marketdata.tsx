@@ -11,7 +11,7 @@ const Marketdata = () => {
 
   const updateMarket = async () => {
     try {
-      const response = await axios.get("https://api.coingecko.com/api/v3/pin");
+      const response = await axios.get("https://api.coingecko.com/api/v3/ping");
       setServerStatus(response);
     } catch (error) {
       setServerStatus(error as any);
@@ -43,7 +43,7 @@ const Marketdata = () => {
                   {serverStatus.status} - {serverStatus.data.gecko_says}
                 </span>
               ) : (
-                <span className="text-red-400">{serverStatus.status} - {serverStatus.data.error}</span>
+                <span className="text-red-400">{serverStatus.status} - {serverStatus.data}</span>
               )}
             </p>
           </div>

@@ -1,4 +1,5 @@
 "use client";
+"strict";
 
 import Connex from "@vechain/connex";
 import { useEffect, useState } from "react";
@@ -16,8 +17,8 @@ const Blocks = () => {
   const [block, setBlock] = useState<Block[]>([]);
   const [clauses, setClauses] = useState<number[]>([]);
 
-/*   useEffect(() => {
-    const fetchBlocks = async () => {
+  useEffect(() => {
+    const bestBlock = async () => {
       try {
         const resBlock = await axios.get(
           "https://node.vechain.energy/blocks/best"
@@ -52,8 +53,8 @@ const Blocks = () => {
       }
     };
 
-    fetchBlocks();
-  }, []); */
+    bestBlock();
+  }, []);
 
   useEffect(() => {
     const fetchBlocks = async () => {
@@ -62,7 +63,7 @@ const Blocks = () => {
         const head = await ticker.next();
         if (block.length >= 6) {
           const updatedBlock = [...block];
-          block.pop();
+          block.slice(0, 6);
           const lastBlockNumber =
             updatedBlock[updatedBlock.length - 1]?.number || 0;
           if (head.number !== lastBlockNumber) {
