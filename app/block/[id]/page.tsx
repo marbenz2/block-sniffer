@@ -1,7 +1,7 @@
 interface BlockProps {
-  block: number;
+  key: number;
 }
 
-export default function Block({ block }: BlockProps) {
-  return <div>{block}</div>;
+export default function Block({ key }: BlockProps) {
+  return <div>{key}</div>;
 }
