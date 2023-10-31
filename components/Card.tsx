@@ -10,8 +10,8 @@ interface CardProps {
 const Card = ({ blockid, block, transactions, clauses }: CardProps) => {
   return (
     <Link
-      href={`/block/${blockid}`}
-      key={block}
+      href="#"
+      key=""
       className="flex flex-grow w-1/3 h-fit text-sm bg-slate-800 text-white p-2 rounded-xl shadow-lg border-b border-lime-400 hover:bg-slate-700 transition-all cursor-pointer"
     >
       <aside className="grid grid-cols-2 gap-y-2">
