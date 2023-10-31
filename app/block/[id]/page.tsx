@@ -3,14 +3,10 @@ interface Props {
   block: number;
 }
 
-const page = ({ key, block }: Props) => {
+export default function Block({ key, block }: Props) {
   return (
-    <>
-      <h1>Block</h1>
-      <h1>{key}</h1>
-      <h1>{block}</h1>
-    </>
+    <div key={key}>
+      <h1>Block: {block}</h1>
+    </div>
   );
-};
-
-export default page;
+}
